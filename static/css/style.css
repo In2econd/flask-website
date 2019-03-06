@@ -1,0 +1,40 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    overflow: hidden;
+    background: #1a1a1a;
+    color: #e6e6e6;
+}
+
+.main {
+    align-items: center;
+    background: url('image.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.heading {
+    font-size: 80px;
+    margin: 0;
+    padding: 10px;
+}
+
+a.nav-link:link {
+   color: #e6e6e6;
+   text-decoration: none;
+}
+a.nav-link:visited {
+   color: #e6e6e6;
+   text-decoration: none;
+}
+a.nav-link:hover {
+   color: #e6e6e6;
+   text-decoration: none;
+}
+a.nav-link:active {
+   color: #e6e6e6;
+   text-decoration: none;
+}
