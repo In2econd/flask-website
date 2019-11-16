@@ -9,7 +9,7 @@ provider "digitalocean" {
 # Configure droplet
 resource "digitalocean_droplet" "webserver" {
   name   = "webserver"
-  image  = "ubuntu-18-04-x64"
+  image  = "55055184"
   region = "nyc1"
   size   = "s-1vcpu-1gb"
 }
