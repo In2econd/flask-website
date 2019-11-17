@@ -2,7 +2,7 @@
 https://www.austinhervias.xyz
 ## Requirements
 * Terraform
-    * terraform.tf vars file
+    * terraform.tfvars file
 * DigitalOcean
     * Image with docker and fail2ban installed
 * Cloudflare Account
@@ -29,10 +29,14 @@ https://www.austinhervias.xyz
 ## Setting up the environment
 ### Terraform
 `terraform init`
+
 `terraform plan` - Stage changes to infrastructure
+
 `terraform apply` - Push changes to infrastructure
-'terraform destroy` - Remove all DigitalOcean and Cloudflare infrastructure
+
+`terraform destroy` - Remove all DigitalOcean and Cloudflare infrastructure
 
 ### DigitalOcean
 Log into droplet via SSH
+
 Run shell/start_services.sh and install Datadog agent on docker
