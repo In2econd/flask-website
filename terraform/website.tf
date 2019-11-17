@@ -103,9 +103,9 @@ resource "cloudflare_record" "www" {
   proxied = "true"
 }
 
-resource "cloudflare_record" "ssh" {
+resource "cloudflare_record" "admin" {
   zone_id = "${var.cloudflare_zone_id}"
-  name    = "ssh"
+  name    = "admin"
   value   = "austinhervias.xyz"
   type    = "CNAME"
   ttl     = 1
