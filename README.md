@@ -1,7 +1,7 @@
 # flask-website
 https://www.austinhervias.xyz
 
-[Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
+![Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
 ## Requirements
 * Terraform
     * terraform.tfvars file
