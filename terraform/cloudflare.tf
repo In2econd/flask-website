@@ -2,6 +2,8 @@
 variable "cloudflare_email" {}
 variable "cloudflare_api_key" {}
 variable "cloudflare_zone_id" {}
+variable "load_balancer_ip" {}
+
 
 # Configure Cloudflare Provider
 provider "cloudflare" {
@@ -14,7 +16,7 @@ provider "cloudflare" {
 resource "cloudflare_record" "root" {
   zone_id = "${var.cloudflare_zone_id}"
   name    = "@"
-  value   = ""
+  value   = "${var.load_balancer_ip}"
   type    = "A"
   ttl     = 1
   proxied = "true"
