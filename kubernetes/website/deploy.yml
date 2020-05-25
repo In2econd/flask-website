@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-deployment
+  namespace: website
   labels:
     app: website
 
@@ -19,5 +20,5 @@ spec:
       - name: flask-website
         image: ahervias77/flask-website:latest
         ports:
-        - containerPort: 80
+        - containerPort: 5000
          
