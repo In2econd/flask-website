@@ -2,6 +2,7 @@
 https://www.austinhervias.xyz
 
 ![Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
+![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.austinhervias.xyz)
 ## Requirements
 * Terraform
     * terraform.tfvars file
