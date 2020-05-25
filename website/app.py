@@ -24,6 +24,6 @@ def site():
 
 # ------------
 if __name__ == '__main__':
-    """ Runs the Flask app listening on all interfaces, port 80 """
+    """ Runs the Flask app listening on all interfaces, port 5000 """
 
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)

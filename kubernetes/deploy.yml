@@ -19,5 +19,5 @@ spec:
       - name: flask-website
         image: ahervias77/flask-website:latest
         ports:
-        - containerPort: 80
+        - containerPort: 5000
          
