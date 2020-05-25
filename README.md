@@ -12,12 +12,15 @@ https://www.austinhervias.xyz
 * Docker (and Docker Hub account)
 * Python 3.8
     * flask
+* LogDNA Account
 ## Infrastructure Layout
 * GitHub
     * Docker Hub
         * Build image from master branch or tag
     * DigitalOcean
         * Kubernetes cluster
+            * flask-website Deployment
+            * LogDNA Agent
         * Load balancer
     * Terraform
         * Cloudflare
@@ -49,5 +52,5 @@ Take note of the load balancer IP address and add it to the terraform.tfvars fil
 
 `kubectl rollout undo deployments/flask-deployment` - Undo rolling update
 
-## To Do
-* Monitoring to replace Datadog
+### Logging
+LogDNA Agent v2 Setup: https://docs.logdna.com/docs/logdna-agent-kubernetes
