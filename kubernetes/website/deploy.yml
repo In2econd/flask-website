@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: flask-website
-        image: ahervias77/flask-website:k8s-test-1
+        image: ahervias77/flask-website:latest
         ports:
         - containerPort: 5000
          
