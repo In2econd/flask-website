@@ -43,7 +43,7 @@ Take note of the load balancer IP address and add it to the terraform.tfvars fil
 ### Updates
 `kubectl scale deployments/flask-deployment --replicas=#` - Scale deployment to specified # of pods
 
-`kubectl set image deployments/flask-deployment flask-website=flask-website:tag` - Rolling update
+`kubectl set image deployments/flask-deployment flask-website=ahervias77/flask-website:tag` - Rolling update
 
 `kubectl rollout status deployments/flask-deployment` - Rollout status
 
