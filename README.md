@@ -1,42 +1,53 @@
 # flask-website
 https://www.austinhervias.xyz
+
+![Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
+![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.austinhervias.xyz)
 ## Requirements
 * Terraform
     * terraform.tfvars file
 * DigitalOcean
-    * Image with docker and fail2ban installed
+    * Kubernetes cluster
 * Cloudflare Account
-* Datadog Account
 * Docker (and Docker Hub account)
 * Python 3.8
     * flask
 ## Infrastructure Layout
 * GitHub
     * Docker Hub
-        * Build image from master branch
+        * Build image from master branch or tag
+    * DigitalOcean
+        * Kubernetes cluster
+        * Load balancer
     * Terraform
-        * DigitalOcean
-            * Droplet (Ubuntu)
-                * Docker
-                    * flask-website
-                    * Portainer
-                    * Datadog Agent
-            * Firewall Rules
-            * Floating IP
         * Cloudflare
             * DNS records
-            * Datadog Metrics
+    
 ## Setting up the environment
+### DigitalOcean
+Set up Kubernetes cluster
+
+Create a deployment and expose it with a load balancer
+
+Take note of the load balancer IP address and add it to the terraform.tfvars file
+
 ### Terraform
 `terraform init`
 
-`terraform plan` - Stage changes to infrastructure
+`terraform plan` - Stage changes to Cloudflare infrastructure (DNS records)
 
-`terraform apply` - Push changes to infrastructure
+`terraform apply` - Push changes to Cloudflare infrastructure
 
-`terraform destroy` - Remove all DigitalOcean and Cloudflare infrastructure
+`terraform destroy` - Remove all Cloudflare infrastructure
 
-### DigitalOcean
-Log into droplet via SSH
+### Updates
+`kubectl scale deployments/flask-deployment --replicas=#` - Scale deployment to specified # of pods
 
-Run shell/start_services.sh and install Datadog agent on docker
+`kubectl set image deployments/flask-deployment flask-website=flask-website:tag` - Rolling update
+
+`kubectl rollout status deployments/flask-deployment` - Rollout status
+
+`kubectl rollout undo deployments/flask-deployment` - Undo rolling update
+
+## To Do
+* Monitoring to replace Datadog
