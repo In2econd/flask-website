@@ -1,8 +1,8 @@
 # flask-website
-https://www.austinhervias.xyz
+https://www.ahervias.dev
 
 ![Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
-![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.austinhervias.xyz)
+![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.ahervias.dev)
 ## Requirements
 * Terraform
     * terraform.tfvars file
@@ -54,3 +54,5 @@ Take note of the load balancer IP address and add it to the terraform.tfvars fil
 
 ### Logging
 LogDNA Agent v2 Setup: https://docs.logdna.com/docs/logdna-agent-kubernetes
+
+Datadog: https://docs.datadoghq.com/agent/kubernetes/?tab=helm
