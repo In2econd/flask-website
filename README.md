@@ -13,6 +13,7 @@ https://www.ahervias.dev
 * Python 3.8
     * flask
 * LogDNA Account
+* Datadog Account
 ## Infrastructure Layout
 * GitHub
     * Docker Hub
@@ -21,6 +22,7 @@ https://www.ahervias.dev
         * Kubernetes cluster
             * flask-website Deployment
             * LogDNA Agent
+            * Datadog Agent
         * Load balancer
     * Terraform
         * Cloudflare
