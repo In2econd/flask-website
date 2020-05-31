@@ -1,8 +1,8 @@
 # flask-website
-https://www.austinhervias.xyz
+https://www.ahervias.dev
 
 ![Docker Build Status](https://img.shields.io/docker/cloud/build/ahervias77/flask-website)
-![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.austinhervias.xyz)
+![Website Status](https://img.shields.io/website?down_color=red&down_message=down&up_color=g&up_message=up&url=https%3A%2F%2Fwww.ahervias.dev)
 ## Requirements
 * Terraform
     * terraform.tfvars file
@@ -12,12 +12,15 @@ https://www.austinhervias.xyz
 * Docker (and Docker Hub account)
 * Python 3.8
     * flask
+* LogDNA Account
 ## Infrastructure Layout
 * GitHub
     * Docker Hub
-        * Build image from master branch or tag
+        * Build image from tag
     * DigitalOcean
         * Kubernetes cluster
+            * flask-website Deployment
+            * LogDNA Agent
         * Load balancer
     * Terraform
         * Cloudflare
@@ -43,11 +46,13 @@ Take note of the load balancer IP address and add it to the terraform.tfvars fil
 ### Updates
 `kubectl scale deployments/flask-deployment --replicas=#` - Scale deployment to specified # of pods
 
-`kubectl set image deployments/flask-deployment flask-website=flask-website:tag` - Rolling update
+`kubectl set image deployments/flask-deployment flask-website=ahervias77/flask-website:tag` - Rolling update
 
 `kubectl rollout status deployments/flask-deployment` - Rollout status
 
 `kubectl rollout undo deployments/flask-deployment` - Undo rolling update
 
-## To Do
-* Monitoring to replace Datadog
+### Logging
+LogDNA Agent v2 Setup: https://docs.logdna.com/docs/logdna-agent-kubernetes
+
+Datadog: https://docs.datadoghq.com/agent/kubernetes/?tab=helm
