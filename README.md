@@ -16,7 +16,7 @@ https://www.austinhervias.xyz
 ## Infrastructure Layout
 * GitHub
     * Docker Hub
-        * Build image from master branch or tag
+        * Build image from tag
     * DigitalOcean
         * Kubernetes cluster
             * flask-website Deployment
