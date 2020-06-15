@@ -58,3 +58,6 @@ Take note of the load balancer IP address and add it to the terraform.tfvars fil
 LogDNA Agent v2 Setup: https://docs.logdna.com/docs/logdna-agent-kubernetes
 
 Datadog: https://docs.datadoghq.com/agent/kubernetes/?tab=helm
+
+### Security Testing
+OWASP ZAP Baseline Scan GitHub Action runs every Saturday at 5AM UTC
