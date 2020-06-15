@@ -1,0 +1,31 @@
+name: OWASP ZAP Baseline Scan
+
+on: [push]
+#  schedule:
+#    - cron: "0 5 * * 6"
+
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Scan website
+        uses: zaproxy/action-baseline@v0.3.0
+        with:
+          target: 'https://www.ahervias.dev'
+          cmd_options: '-g configfile'
+#      - name: Upload report
+#        if: always()
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: website
+#          path: report_html.html
+      - name: Upload configfile
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: configfile
+          path: configfile
