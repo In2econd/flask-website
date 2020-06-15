@@ -22,7 +22,7 @@
 10033	WARN	(Directory Browsing)
 10034	WARN	(Heartbleed OpenSSL Vulnerability (Indicative))
 10035	IGNORE	(Strict-Transport-Security Header Scanner)
-10036	WARN	(HTTP Server Response Header Scanner)
+10036	IGNORE	(HTTP Server Response Header Scanner)
 10037	WARN	(Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s))
 10038	IGNORE	(Content Security Policy (CSP) Header Not Set)
 10039	WARN	(X-Backend-Server Header Information Leak)
