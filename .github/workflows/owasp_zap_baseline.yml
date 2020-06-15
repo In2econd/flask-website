@@ -16,16 +16,10 @@ jobs:
         uses: zaproxy/action-baseline@v0.3.0
         with:
           target: 'https://www.ahervias.dev'
-          cmd_options: '-g configfile'
-#      - name: Upload report
-#        if: always()
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: website
-#          path: report_html.html
-      - name: Upload configfile
+          cmd_options: '-c .github/workflows/zap_configfile'
+      - name: Upload report
         if: always()
         uses: actions/upload-artifact@v1
         with:
-          name: configfile
-          path: configfile
+          name: website
+          path: report_html.html
